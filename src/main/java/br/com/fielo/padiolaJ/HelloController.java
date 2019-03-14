@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	
-	
+
 	@RequestMapping("/")
-    public ResponseEntity<String> greeting() {
+	public ResponseEntity<String> greeting() {
 		JavarestApi api = new JavarestApi();
 		try {
 			api.execute();
 		} catch (URISyntaxException e) {
-			return ResponseEntity.badRequest().body("Erro "+e.getMessage());
+			return ResponseEntity.badRequest().body("Erro " + e.getMessage());
 		}
-        return ResponseEntity.ok().body("teste");
-    }
+		return ResponseEntity.ok().body("teste");
+	}
 
 }
