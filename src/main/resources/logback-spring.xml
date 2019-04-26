@@ -7,7 +7,7 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>./logs/padiola.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>./logs/padiolaJ.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>90</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -22,7 +22,7 @@
     </appender>
 
 
-    <logger name="br.com.rogrs" level="@logback.loglevel@"/>
+    <logger name="br.com.fielo" level="@logback.loglevel@"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>

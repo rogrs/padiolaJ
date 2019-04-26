@@ -47,7 +47,7 @@ public class CustomerResource {
 			throw new BadRequestAlertException("A new  cannot already have an ID", ENTITY_NAME, "idexists");
 		}
 		Customer result = repository.save(obj);
-		return ResponseEntity.created(new URI("/api/cargos/" + result.getId()))
+		return ResponseEntity.created(new URI("/api/customers/" + result.getId()))
 				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString())).body(result);
 	}
 

@@ -1,2 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/padiolaJ-0.0.1-SNAPSHOT.jar
-
+web: java -jar target/*.jar --spring.profiles.active=heroku --server.port=$PORT
