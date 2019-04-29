@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>2.1.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.fielo</groupId>
@@ -30,24 +30,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.springframework.security.oauth</groupId>
-			<artifactId>spring-security-oauth2</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>salesforce-lightning-design-system</artifactId>
-			<version>2.1.4</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
@@ -91,6 +73,16 @@
 			<artifactId>problem-spring-web</artifactId>
 			<version>${problem-spring-web.version}</version>
 		</dependency>
+		
+		<dependency>
+             <groupId>org.springframework</groupId>
+             <artifactId>spring-jdbc</artifactId>
+           </dependency>
+ 
+           <dependency>
+	      <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-jdbc</artifactId>
+	   </dependency>
 
 
 	</dependencies>

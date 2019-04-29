@@ -3,6 +3,7 @@ package br.com.fielo.padiolaJ.web.rest;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,7 +74,7 @@ public class CustomerResource {
 	@GetMapping("/customers/{id}")
 	public ResponseEntity<?> get(@PathVariable Long id) {
 		log.debug("REST request to get {}: {}", ENTITY_NAME, id);
-		Customer obj = repository.findOne(id);
+		Optional<Customer> obj = repository.findById(id);
 		return new ResponseEntity<>(obj, HttpStatus.OK);
 	}
 
@@ -81,8 +82,7 @@ public class CustomerResource {
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		log.debug("REST request to delete {}: {}", ENTITY_NAME, id);
 
-		repository.delete(id);
-
+		repository.deleteById(id);
 		return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
 	}
 
