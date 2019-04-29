@@ -1,22 +1,21 @@
 package br.com.fielo.padiolaJ.config;
 
 
+import com.zaxxer.hikari.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 import javax.sql.DataSource;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class DatabaseConfig {
-	
-	@Bean
-	@Primary
-	@ConfigurationProperties(prefix="spring.datasource")
-	public DataSource primaryDataSource() {
-	    return DataSourceBuilder.create().build();
-	}
 
+  @Value("${spring.datasource.url}")
+  private String dbUrl;
+
+  @Bean
+  public DataSource dataSource() {
+      HikariConfig config = new HikariConfig();
+      config.setJdbcUrl(dbUrl);
+      return new HikariDataSource(config);
+  }
 }
