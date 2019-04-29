@@ -1,4 +1,4 @@
-package br.com.fielo.padiolaJ.web.rest;
+package br.com.fielo.padiolaJ.jdbc.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
