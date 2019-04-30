@@ -1,5 +1,8 @@
 package br.com.fielo.padiolaJ.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
 	
 	private String id;

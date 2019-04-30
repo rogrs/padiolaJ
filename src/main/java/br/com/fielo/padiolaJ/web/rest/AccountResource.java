@@ -31,7 +31,7 @@ public class AccountResource {
 	@GetMapping("/accounts")
 	public ResponseEntity<List<Account>> getAll() {
 
-		List<Account> lista = getAllLines("SELECT id, name, rating, industry FROM salesforce.account");
+		List<Account> lista = getAllLines("SELECT Id, Name, Type, Industry, Rating FROM salesforce.Account");
 
 		return ResponseEntity.ok().body(lista);
 
