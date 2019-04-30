@@ -83,6 +83,12 @@
 	      <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-jdbc</artifactId>
 	   </dependency>
+	   
+	   <dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>salesforce-lightning-design-system</artifactId>
+			<version>2.1.4</version>
+		</dependency>
 
 
 	</dependencies>

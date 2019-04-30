@@ -16,10 +16,10 @@
             $("tbody").empty();
             $.each(data, function(i, account) {
               var tr = $("<tr>");
-              tr.append($("<td>").text(account.Id));
-              tr.append($("<td>").text(account.Name));
-              tr.append($("<td>").text(account.Industry));
-              tr.append($("<td>").text(account.Rating));
+              tr.append($("<td>").text(account.id));
+              tr.append($("<td>").text(account.name));
+              tr.append($("<td>").text(account.industry));
+              tr.append($("<td>").text(account.rating));
               $("tbody").append(tr);
             });
           });
