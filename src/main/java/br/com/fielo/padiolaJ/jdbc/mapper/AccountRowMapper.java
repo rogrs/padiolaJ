@@ -12,7 +12,10 @@ public class AccountRowMapper implements RowMapper<Account> {
 		@Override
 		public Account mapRow(ResultSet row, int rowNum) throws SQLException {
 			Account obj = new Account();
+			obj.setId(row.getString("id"));
 			obj.setName(row.getString("name"));
+			obj.setRating(row.getString("rating"));
+			obj.setIndustry(row.getString("industry"));
 			
 			
 			return obj;

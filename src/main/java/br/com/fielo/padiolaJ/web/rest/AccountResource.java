@@ -10,14 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fielo.padiolaJ.domain.Account;
 import br.com.fielo.padiolaJ.jdbc.mapper.AccountRowMapper;
 
 @RestController
-@RequestMapping("/api")
 @Profile("heroku")
 public class AccountResource {
 
@@ -33,7 +31,7 @@ public class AccountResource {
 	@GetMapping("/accounts")
 	public ResponseEntity<List<Account>> getAll() {
 
-		List<Account> lista = getAllLines("SELECT name FROM salesforce.account");
+		List<Account> lista = getAllLines("SELECT id, name, rating, industry FROM salesforce.account");
 
 		return ResponseEntity.ok().body(lista);
 
